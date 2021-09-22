@@ -12,16 +12,21 @@ const CardList = ({ dogs }) => {
                     id: dog.id,
                     sex: dog.sex,
                     photo_url: dog.photo_url,
-                    tags: dog.tags
+                    tags: dog.tags,
+                    color: dog.color,
+                    breed: dog.breed,
+                    weight: dog.weight,
+                    dob: dog.dob,
+                    memo: dog.memo_text
                 }
             }} >
                 <Card key={dog.id}
-                      id={dog.id}
-                      name={dog.name}
-                      sex={dog.sex}
-                      photo_url={dog.photo_url}
+                    id={dog.id}
+                    name={dog.name}
+                    sex={dog.sex}
+                    photo_url={dog.photo_url}
                 />
-            
+
             </Link>
         );
     })
@@ -30,6 +35,6 @@ const CardList = ({ dogs }) => {
             {cardComponent}
         </div>
     );
-} 
+}
 
 export default CardList;

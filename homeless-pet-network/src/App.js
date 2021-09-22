@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
 import 'tachyons'
 import SearchBox from './components/SearchBox'
 import CardList from './components/CardList'
 import DogInfo from './components/DogInfo'
-import { dogs } from './dogs'
+// import { dogs } from './dogs'
 
 class App extends Component {
   constructor() {
@@ -19,10 +19,10 @@ class App extends Component {
 
   componentDidMount() {
     fetch(`http://localhost:8000/dogs/${this.state.total_dogs}`)
-    .then(response => response.json())
-    .then(results => {
-      this.setState({ dogs: results })
-    })
+      .then(response => response.json())
+      .then(results => {
+        this.setState({ dogs: results })
+      })
   }
 
   onSearchChange = (event) => {
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   onClick = () => {
-    this.setState({ total_dogs: this.state.total_dogs + 10})
+    this.setState({ total_dogs: this.state.total_dogs + 10 })
     this.componentDidMount()
   }
 
